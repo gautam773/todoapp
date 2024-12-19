@@ -44,6 +44,7 @@ public class TodoServiceImpl implements TodoService{
                     dtoObj.setDate(data.getDate());
                     dtoObj.setTime(data.getTime());
                     dtoObj.setStatus(data.getStatus());
+                    dtoObj.setId(data.getId());
                     dto.add(dtoObj);
                 }
             }
