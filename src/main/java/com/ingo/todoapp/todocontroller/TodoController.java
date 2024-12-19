@@ -40,7 +40,7 @@ public class TodoController {
         return new ResponseEntity<>("Sucessfully Removed",HttpStatus.OK);
     }
 
-    @PostMapping("updateTodo")
+    @PutMapping("updateTodo")
     public ResponseEntity<TodoDataDTO> updateTodo(@RequestBody TodoDataDTO dto)
     {
         TodoDataDTO response =  todoService.updateTodo(dto);

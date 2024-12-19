@@ -78,7 +78,7 @@ return new ArrayList<>();
         data.setTime(dto.getTime());
         data.setActivity(dto.getActivity());
         data.setStatus(dto.getStatus());
-        TodoData updated = todoDao.saveAndFlush(data);
+        TodoData updated = todoDao.save(data);
         TodoDataDTO dtoData = new TodoDataDTO();
         dtoData.setActivity(updated.getActivity());
         dtoData.setDate(updated.getDate());
