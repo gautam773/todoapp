@@ -86,6 +86,7 @@ return new ArrayList<>();
         dtoData.setDate(updated.getDate());
         dtoData.setTime(updated.getTime());
         dtoData.setStatus(updated.getStatus());
+        dtoData.setId(updated.getId());
 
         return dtoData;
     }
