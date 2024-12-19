@@ -11,4 +11,8 @@ public interface TodoService {
     List<TodoDataDTO> findAllTodoForTheDay(TodoDataDTO todoDataDTO);
 
     void createTodoActivity(TodoDataDTO todoDataDTO);
+
+    void removeTodo(Long id);
+
+    TodoDataDTO updateTodo(TodoDataDTO dto);
 }

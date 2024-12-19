@@ -18,4 +18,5 @@ public interface TodoDao  extends JpaRepository<TodoData,Long> {
 
     @Query(value="SELECT * FROM todo WHERE date IS NULL OR DATE = :date and :time IS NULL OR TIME = :time and :activity IS NULL or ACTIVITY=:activity and :status IS NULL OR STATUS=:status",nativeQuery=true)
     List<TodoData>  findTodoList(Date date, LocalTime time, String activity, String status);
+
 }

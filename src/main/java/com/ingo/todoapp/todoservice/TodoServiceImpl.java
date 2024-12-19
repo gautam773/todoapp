@@ -64,4 +64,27 @@ return new ArrayList<>();
             todoDao.save(data);
         }
     }
+
+    @Override
+    public void removeTodo(Long id) {
+        todoDao.deleteById(id);
+    }
+
+    @Override
+    public TodoDataDTO updateTodo(TodoDataDTO dto) {
+
+        TodoData data = new TodoData();
+        data.setDate(dto.getDate());
+        data.setTime(dto.getTime());
+        data.setActivity(dto.getActivity());
+        data.setStatus(dto.getStatus());
+        TodoData updated = todoDao.saveAndFlush(data);
+        TodoDataDTO dtoData = new TodoDataDTO();
+        dtoData.setActivity(updated.getActivity());
+        dtoData.setDate(updated.getDate());
+        dtoData.setTime(updated.getTime());
+        dtoData.setStatus(updated.getStatus());
+
+        return dtoData;
+    }
 }

@@ -1,5 +1,6 @@
 package com.ingo.todoapp.todocontroller;
 
+import com.ingo.todoapp.todoentity.TodoData;
 import com.ingo.todoapp.todoentity.TodoDataDTO;
 import com.ingo.todoapp.todoservice.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,19 @@ public class TodoController {
     {
         todoService.createTodoActivity(todoDataDTO);
         return new ResponseEntity<>("Todo created Successfully",HttpStatus.OK);
+    }
+
+    @PostMapping("removeTodo")
+    public ResponseEntity<String> removeTodo(@RequestParam Long id)
+    {
+        todoService.removeTodo(id);
+        return new ResponseEntity<>("Sucessfully Removed",HttpStatus.OK);
+    }
+
+    @PostMapping("updateTodo")
+    public ResponseEntity<TodoDataDTO> updateTodo(@RequestBody TodoDataDTO dto)
+    {
+        TodoDataDTO response =  todoService.updateTodo(dto);
+     return new ResponseEntity<>(response,HttpStatus.OK);
     }
 }
