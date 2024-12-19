@@ -33,8 +33,8 @@ public class TodoController {
         return new ResponseEntity<>("Todo created Successfully",HttpStatus.OK);
     }
 
-    @PostMapping("removeTodo")
-    public ResponseEntity<String> removeTodo(@RequestParam Long id)
+    @DeleteMapping("removeTodo/{id}")
+    public ResponseEntity<String> removeTodo(@PathVariable Long id)
     {
         todoService.removeTodo(id);
         return new ResponseEntity<>("Sucessfully Removed",HttpStatus.OK);
