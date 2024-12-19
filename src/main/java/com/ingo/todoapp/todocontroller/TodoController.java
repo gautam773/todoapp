@@ -5,10 +5,7 @@ import com.ingo.todoapp.todoservice.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +16,7 @@ public class TodoController {
     @Autowired
     TodoService todoService;
 
+    @CrossOrigin(origins = "http://todoapp-production-b5d4.up.railway.app:8080")
     @PostMapping("findAllTodoForTheDay")
     public ResponseEntity<List<TodoDataDTO>> findAllTodoForTheDay(@RequestBody TodoDataDTO todoDataDTO)
     {
@@ -26,6 +24,7 @@ public class TodoController {
         return new ResponseEntity<>(todoList,HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://todoapp-production-b5d4.up.railway.app:8080")
     @PostMapping("createTodoActivity")
     public ResponseEntity<String> createTodoActivity(@RequestBody TodoDataDTO todoDataDTO)
     {
