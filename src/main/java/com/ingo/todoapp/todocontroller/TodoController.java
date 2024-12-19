@@ -11,12 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("todoApp")
+@CrossOrigin
 public class TodoController {
 
     @Autowired
     TodoService todoService;
 
-    @CrossOrigin(origins = "http://localhost:3000,http://localhost:8080")
+
     @PostMapping("findAllTodoForTheDay")
     public ResponseEntity<List<TodoDataDTO>> findAllTodoForTheDay(@RequestBody TodoDataDTO todoDataDTO)
     {
@@ -24,7 +25,6 @@ public class TodoController {
         return new ResponseEntity<>(todoList,HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000,http://localhost:8080")
     @PostMapping("createTodoActivity")
     public ResponseEntity<String> createTodoActivity(@RequestBody TodoDataDTO todoDataDTO)
     {
