@@ -18,6 +18,11 @@ public class TodoController {
     @Autowired
     TodoService todoService;
 
+    @GetMapping("/")
+    public ResponseEntity<String> init()
+    {
+        return new ResponseEntity<>("Hi there!", HttpStatus.OK);
+    }
 
     @PostMapping("findAllTodoForTheDay")
     public ResponseEntity<List<TodoDataDTO>> findAllTodoForTheDay(@RequestBody TodoDataDTO todoDataDTO)
