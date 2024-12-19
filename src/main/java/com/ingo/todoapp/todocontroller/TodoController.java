@@ -16,7 +16,7 @@ public class TodoController {
     @Autowired
     TodoService todoService;
 
-    @CrossOrigin(origins = "https://todoapp-production-b5d4.up.railway.app:8080")
+    @CrossOrigin(origins = "https://todoapp-production-b5d4.up.railway.app")
     @PostMapping("findAllTodoForTheDay")
     public ResponseEntity<List<TodoDataDTO>> findAllTodoForTheDay(@RequestBody TodoDataDTO todoDataDTO)
     {
@@ -24,7 +24,7 @@ public class TodoController {
         return new ResponseEntity<>(todoList,HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://todoapp-production-b5d4.up.railway.app:8080")
+    @CrossOrigin(origins = "https://todoapp-production-b5d4.up.railway.app")
     @PostMapping("createTodoActivity")
     public ResponseEntity<String> createTodoActivity(@RequestBody TodoDataDTO todoDataDTO)
     {
