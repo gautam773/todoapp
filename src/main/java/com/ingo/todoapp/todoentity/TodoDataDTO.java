@@ -11,6 +11,7 @@ import java.util.TimeZone;
 
 @Data
 public class TodoDataDTO {
+    private Long id;
     private Date date;
     @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime time;
