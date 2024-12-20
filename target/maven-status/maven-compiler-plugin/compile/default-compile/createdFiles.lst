@@ -1,0 +1,7 @@
+com/ingo/todoapp/tododao/TodoDao.class
+com/ingo/todoapp/todoentity/TodoData.class
+com/ingo/todoapp/TodoappApplication.class
+com/ingo/todoapp/todoservice/TodoService.class
+com/ingo/todoapp/todoservice/TodoServiceImpl.class
+com/ingo/todoapp/todocontroller/TodoController.class
+com/ingo/todoapp/todoentity/TodoDataDTO.class
