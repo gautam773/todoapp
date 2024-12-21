@@ -1,10 +1,12 @@
 package com.ingo.todoapp.todoservice;
 
+import com.ingo.todoapp.tododao.StatusDao;
 import com.ingo.todoapp.tododao.TodoDao;
 import com.ingo.todoapp.todoentity.TodoData;
 import com.ingo.todoapp.todoentity.TodoDataDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -19,6 +21,8 @@ public class TodoServiceImpl implements TodoService{
 
     @Autowired
     TodoDao todoDao;
+    @Autowired
+    StatusDao statusDao;
 
     @Override
     public List<TodoDataDTO> findAllTodoForTheDay(TodoDataDTO todoDataDTO) {
@@ -89,5 +93,12 @@ return new ArrayList<>();
         dtoData.setId(updated.getId());
 
         return dtoData;
+    }
+
+    @Override
+    public List<String> fetchStatusList() {
+        List<String> statusList = new ArrayList<>();
+        statusList = statusDao.fetchStatusList();
+        return statusList;
     }
 }

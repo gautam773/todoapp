@@ -15,4 +15,6 @@ public interface TodoService {
     void removeTodo(Long id);
 
     TodoDataDTO updateTodo(TodoDataDTO dto);
+
+    List<String> fetchStatusList();
 }

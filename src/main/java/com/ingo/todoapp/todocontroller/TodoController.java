@@ -51,4 +51,11 @@ public class TodoController {
         TodoDataDTO response =  todoService.updateTodo(dto);
      return new ResponseEntity<>(response,HttpStatus.OK);
     }
+
+    @GetMapping("fetchStatusList")
+    public ResponseEntity<List<String>> fetchStatusList()
+    {
+        List<String> response =  todoService.fetchStatusList();
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
 }
